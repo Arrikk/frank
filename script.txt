@@ -1,0 +1,35 @@
+#!/bin/bash
+sudo yum update -y
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+source ~/.bashrc
+nvm install node
+sudo yum install -y \
+  glib2-devel \
+  pango-devel \
+  libX11-devel \
+  libXcomposite-devel \
+  libXcursor-devel \
+  libXdamage-devel \
+  libXext-devel \
+  libXi-devel \
+  libXtst-devel \
+  cups-devel \
+  libXScrnSaver-devel \
+  libXrandr-devel \
+  libXinerama-devel \
+  mesa-libGL-devel \
+  mesa-libEGL-devel
+sudo yum install atk at-spi2-atk gtk3 alsa-lib -y
+sudo npm install -g npm
+sudo mkdir /var/scrape
+chmod -R 777 /var/scrape
+aws s3 cp s3://buckect792jkh9/app.js /var/scrape
+aws s3 cp s3://buckect792jkh9/dataPage.js /var/scrape
+aws s3 cp s3://buckect792jkh9/searchPage.js /var/scrape
+aws s3 cp s3://buckect792jkh9/package.json /var/scrape
+aws s3 cp s3://buckect792jkh9/example.js /var/scrape
+aws s3 cp s3://buckect792jkh9/dl.js /var/scrape
+aws s3 cp s3://buckect792jkh9/b.xlsx /var/scrape
+aws s3 cp s3://buckect792jkh9/book.xlsx /var/scrape
+cd /var/scrape
+npm install
