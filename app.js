@@ -17,19 +17,7 @@ const pageToGo =
   "https://acervomarcas.impi.gob.mx:8181/marcanet/vistas/common/datos/bsqExpedienteCompleto.pgi";
 // const from = 2092086;
 const from = 2129347;
-// DB_HOST=db-mysql-nyc1-03577-do-user-13963218-0.b.db.ondigitalocean.com
-// DB_NAME=tek
-// DB_PORT=25060
-// DB_USER=doadmin
-// DB_PASSWORD=AVNS_nP97zmYw4O2qkTsLlgG
-// SMTP_HOST=smtp.gmail.com
-// SMTP_PORT=465
-// SMTP_SECURE=ssl
-// SMTP_USERNAME=thepodguestlist.uk@gmail.com
-// SMTP_PASSWORD=msmn yjsu zgpm xzce
-// MAIL_FROM=noreply@zenar.com
-// MAIL_FROM_NAME=Zenar INC
-// SECRET_KEY=AVNS_nP97zmYw4O2qkTsLlgG
+
 const to = 2500000;
 
 let browser;
