@@ -49,7 +49,7 @@ const launcher = async (from) => {
   let backN = false;
   try {
     // Launch Puppeteer browsery 
-    browser = await puppeteer.launch({ headless: "new" });
+    browser = await puppeteer.launch({ headless: "new", args: ['--no-sandbox', '--disable-setuid-sandbox'] });
     // Perform searches within the specified range
     let data = null;
     for (let n = from; n <= to; n++) {

@@ -36,6 +36,7 @@ app.get('/download', (req, res) => {
 
 app.get('/start', async (req, res) => {
   await init()
+  res.send("OK Running")
 })
 
 // Start the server
