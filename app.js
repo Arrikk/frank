@@ -16,14 +16,13 @@ const ExcelJS = require("exceljs");
 const pageToGo =
   "https://acervomarcas.impi.gob.mx:8181/marcanet/vistas/common/datos/bsqExpedienteCompleto.pgi";
 // const from = 2092086;
-const from = 2129347;
-
-const to = 2500000;
+const from = process.env.FROM;
+const to = process.env.TO;
 
 let browser;
 let total = 0;
 const workBook = new ExcelJS.Workbook();
-const b = "bk.xlsx";
+const b = "book.xlsx";
 let sheet;
 
 const dataFormatter = (result, data, reset = false) => {
@@ -49,7 +48,7 @@ const launcher = async (from) => {
   let frmN = from;
   let backN = false;
   try {
-    // Launch Puppeteer browsery
+    // Launch Puppeteer browsery 
     browser = await puppeteer.launch({ headless: "new" });
     // Perform searches within the specified range
     let data = null;
@@ -110,4 +109,6 @@ const init = async () => {
   launcher(from);
 };
 
-init();
+module.exports = init
+
+// init();

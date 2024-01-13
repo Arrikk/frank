@@ -1,9 +1,12 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const init = require('./app');
+const env = require("dotenv");
+env.config()
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
 // Set the file path and name
 const filePath = './b.xlsx';
@@ -30,6 +33,10 @@ app.get('/download', (req, res) => {
     res.status(404).send('File not found.');
   }
 });
+
+app.get('/start', async (req, res) => {
+  await init()
+})
 
 // Start the server
 app.listen(port, () => {
