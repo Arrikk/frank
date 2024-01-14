@@ -8,6 +8,12 @@ const {
 const example = require("./example");
 const ExcelJS = require("exceljs");
 
+
+// const chrome = require('chromedriver')
+
+const env = require("dotenv");
+env.config({path: './.env'})
+
 // Uncomment if Chromedriver initialization is needed
 // chrome.start();
 // const browserPath = chrome.path;
@@ -44,6 +50,7 @@ const dataFormatter = (result, data, reset = false) => {
   return result;
 };
 
+// chrome.start()
 const launcher = async (from) => {
   let frmN = from;
   let backN = false;
@@ -109,6 +116,6 @@ const init = async () => {
   launcher(from);
 };
 
-module.exports = init
+// module.exports = init
 
-// init();
+init();
