@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const init = require('./app');
 const env = require("dotenv");
-env.config()
+env.config({path: './.env'})
 
 const app = express();
 const port = process.env.PORT;
